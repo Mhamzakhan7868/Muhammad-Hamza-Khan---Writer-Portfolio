@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Muhammad Hamza Khan — writer from Khyber Pakhtunkhwa, Pakistan. Presenting an independently written Vincenzo Season 2 fan story concept.">
+  <meta name="theme-color" content="#101a2c">
+  <title>Muhammad Hamza Khan | Writer</title>
+  <style>
+    :root {
+      --navy:#101a2c; --navy2:#172944; --green:#087b50; --red:#c83b4b;
+      --gold:#e7c77a; --white:#f7f8fb; --muted:#b8c3d3;
+      --panel:rgba(255,255,255,.075); --line:rgba(255,255,255,.14);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0; color:var(--white); font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(135deg,#07111f 0%,#132943 55%,#071a26 100%);
+      line-height:1.65;
+    }
+    a { color:inherit; }
+    .topline { height:6px; background:linear-gradient(90deg,#087b50 0 50%,#c83b4b 50% 100%); }
+    header {
+      position:sticky; top:0; z-index:5; backdrop-filter:blur(14px);
+      background:rgba(8,17,31,.88); border-bottom:1px solid var(--line);
+    }
+    nav {
+      max-width:1100px; margin:auto; padding:14px 22px; display:flex;
+      align-items:center; justify-content:space-between; gap:18px;
+    }
+    .brand { font-weight:800; letter-spacing:.4px; }
+    .brand span { color:var(--gold); }
+    .navlinks { display:flex; gap:18px; flex-wrap:wrap; }
+    .navlinks a { text-decoration:none; color:var(--muted); font-size:.92rem; }
+    .navlinks a:hover { color:white; }
+    .hero {
+      max-width:1100px; margin:auto; padding:78px 22px 64px;
+      display:grid; grid-template-columns:1.3fr .7fr; gap:48px; align-items:center;
+    }
+    .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:3px; font-size:.78rem; font-weight:bold; }
+    h1 { font-size:clamp(2.5rem,6vw,5rem); line-height:1.05; margin:14px 0; }
+    h1 span { color:var(--gold); }
+    .hero p { color:var(--muted); max-width:650px; font-size:1.08rem; }
+    .flags { font-size:1.5rem; letter-spacing:7px; margin:22px 0; }
+    .buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
+    .btn {
+      display:inline-block; padding:12px 19px; border-radius:30px; text-decoration:none;
+      font-weight:bold; border:1px solid var(--gold); transition:.2s;
+    }
+    .btn.primary { background:var(--gold); color:#172033; }
+    .btn:hover { transform:translateY(-2px); }
+    .photo-wrap { text-align:center; }
+    .photo-frame {
+      width:min(290px,75vw); aspect-ratio:1; margin:auto; padding:8px;
+      border-radius:50%; background:linear-gradient(140deg,#087b50,#f7f8fb,#c83b4b);
+      box-shadow:0 20px 65px #0008;
+    }
+    .photo-frame img {
+      width:100%; height:100%; object-fit:cover; border-radius:50%;
+      border:5px solid var(--navy); display:block;
+    }
+    .photo-note { color:var(--muted); font-size:.8rem; margin-top:12px; }
+    section { max-width:1100px; margin:auto; padding:55px 22px; }
+    .section-title { font-size:clamp(1.8rem,4vw,2.6rem); margin:0 0 10px; }
+    .section-sub { color:var(--muted); margin:0 0 28px; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .card {
+      background:var(--panel); border:1px solid var(--line); border-radius:20px;
+      padding:25px; box-shadow:0 12px 35px #0002;
+    }
+    .card h3 { margin-top:0; color:var(--gold); }
+    .story-card { border-left:4px solid var(--gold); }
+    .tag {
+      display:inline-block; padding:5px 10px; margin:4px 5px 4px 0;
+      border-radius:20px; font-size:.78rem; background:#ffffff12; color:#e8edf5;
+    }
+    .notice { border:1px solid #e7c77a66; background:#e7c77a12; border-radius:14px; padding:15px 17px; color:#f4e8c9; font-size:.9rem; }
+    .contact-list { list-style:none; padding:0; margin:0; }
+    .contact-list li { padding:9px 0; border-bottom:1px solid var(--line); overflow-wrap:anywhere; }
+    .contact-list a { color:var(--gold); text-decoration:none; }
+    form { display:grid; gap:12px; }
+    input, textarea {
+      width:100%; border:1px solid var(--line); border-radius:12px; padding:13px 14px;
+      background:#071321; color:white; font:inherit; outline:none;
+    }
+    input:focus, textarea:focus { border-color:var(--gold); }
+    textarea { min-height:105px; resize:vertical; }
+    .submit {
+      border:0; border-radius:30px; background:var(--gold); color:#182235;
+      padding:13px 20px; font-weight:800; font-size:1rem; cursor:pointer;
+    }
+    .small { color:var(--muted); font-size:.83rem; }
+    #commentStatus { min-height:24px; color:var(--gold); }
+    .comment {
+      padding:15px 0; border-bottom:1px solid var(--line); overflow-wrap:anywhere;
+    }
+    .comment strong { color:var(--gold); }
+    .comment time { color:var(--muted); font-size:.78rem; margin-left:8px; }
+    footer { margin-top:35px; padding:28px 22px; text-align:center; background:#050d18; color:var(--muted); border-top:1px solid var(--line); }
+    footer strong { color:white; }
+    @media (max-width:760px) {
+      .hero { grid-template-columns:1fr; text-align:center; padding-top:52px; gap:32px; }
+      .hero p { margin-left:auto; margin-right:auto; }
+      .buttons { justify-content:center; }
+      .grid { grid-template-columns:1fr; }
+      nav { align-items:flex-start; flex-direction:column; }
+      .navlinks { gap:12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <nav>
+      <div class="brand">HAMZA <span>KHAN.</span></div>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#story">My Story</a>
+        <a href="#contact">Contact</a>
+        <a href="#comments">Comments</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Writer · Story Creator · Pakistan</div>
+        <h1>Muhammad<br><span>Hamza Khan</span></h1>
+        <p>
+          I am a writer from Khyber Pakhtunkhwa, Pakistan. I believe powerful stories
+          can connect people, cultures and imaginations. I have independently developed
+          a fan-written story concept imagining a second season of the Korean drama
+          <em>Vincenzo</em>.
+        </p>
+        <div class="flags" aria-label="Pakistan and South Korea">🇵🇰 &nbsp; 🇰🇷</div>
+        <div class="buttons">
+          <a class="btn primary" href="#story">Explore My Story</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <!-- Apni photo ko hamza.jpg naam dein aur index.html ke sath same folder mein rakhein. -->
+          <img src="hamza.jpg" alt="Portrait of Muhammad Hamza Khan"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x600/172944/e7c77a?text=Add+Your+Photo';">
+        </div>
+        <div class="photo-note">Muhammad Hamza Khan · Pakistan</div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="eyebrow">The person behind the words</div>
+      <h2 class="section-title">About Me</h2>
+      <p class="section-sub">A little introduction to the writer and the idea.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Who I Am</h3>
+          <p>
+            My name is <strong>Muhammad Hamza Khan</strong>. I am from Charsadda,
+            Khyber Pakhtunkhwa, Pakistan. I enjoy storytelling and developing ideas
+            inspired by powerful characters, dramatic conflicts and meaningful plots.
+          </p>
+          <span class="tag">Pakistan</span><span class="tag">Khyber Pakhtunkhwa</span>
+          <span class="tag">Writer</span><span class="tag">Storytelling</span>
+        </article>
+        <article class="card">
+          <h3>My Purpose</h3>
+          <p>
+            I created this website to introduce my writing, share my Vincenzo Season 2
+            fan-story concept and reach people who may be interested in reviewing or
+            discussing the idea.
+          </p>
+          <p class="small">This is a personal writer portfolio, not an official production website.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="eyebrow">A story concept by Hamza Khan</div>
+      <h2 class="section-title">Vincenzo · Season 2</h2>
+      <p class="section-sub">An independently written fan concept inspired by the Korean drama.</p>
+      <div class="card story-card">
+        <span class="tag">K-Drama</span><span class="tag">Fan Story Concept</span>
+        <span class="tag">Crime · Drama · Suspense</span>
+        <h3>A New Chapter. A New Battle.</h3>
+        <p>
+          I, <strong>Hamza Khan</strong>, have written my own imagined continuation
+          of <em>Vincenzo</em>, exploring how the story could move forward in a
+          possible second season. My concept is created by a fan and is shared here
+          for review, discussion and possible consideration by the appropriate
+          rights holders or production representatives.
+        </p>
+        <div class="notice">
+          <strong>To producers, representatives and story reviewers:</strong><br>
+          I would like to present my independently written Vincenzo Season 2 story
+          concept. If you are interested in reviewing or discussing my work, please
+          contact me using the details below.
+        </div>
+        <div class="buttons">
+          <a class="btn primary" href="mailto:mhamzakhan572@gmail.com?subject=Vincenzo%20Season%202%20Story%20Concept">Discuss My Story</a>
+        </div>
+      </div>
+      <p class="small" style="margin-top:14px;">
+        Disclaimer: Vincenzo and its characters belong to their respective copyright
+        owners. This fan concept is unofficial and does not claim affiliation,
+        endorsement or ownership of the original drama.
+      </p>
+    </section>
+
+    <section id="contact">
+      <div class="eyebrow">Let's connect</div>
+      <h2 class="section-title">Contact Hamza Khan</h2>
+      <p class="section-sub">For story discussion, feedback or professional enquiries.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Contact Details</h3>
+          <ul class="contact-list">
+            <li><strong>Name:</strong> Muhammad Hamza Khan</li>
+            <li><strong>Location:</strong> Charsadda, Khyber Pakhtunkhwa, Pakistan</li>
+            <li><strong>Email:</strong> <a href="mailto:mhamzakhan572@gmail.com">mhamzakhan572@gmail.com</a></li>
+            <li><strong>TikTok:</strong> <a id="tiktokLink" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">Add your TikTok profile link"https://www.tiktok.com/@brute_wolf?_r=1&_t=ZS-9BD9XUKtBDi"</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>My Message</h3>
+          <p>
+            I am looking for an opportunity to present my Vincenzo Season 2 story
+            concept to people who can review it or guide me on the proper submission
+            process.
+          </p>
+          <a class="btn primary" href="mailto:mhamzakhan572@gmail.com?subject=Contact%20Muhammad%20Hamza%20Khan">Send an Email</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="comments">
+      <div class="eyebrow">Your thoughts matter</div>
+      <h2 class="section-title">Public Comments</h2>
+      <p class="section-sub">Leave a short message about the website or the story concept.</p>
+      <div class="grid">
+        <div class="card">
+          <form id="commentForm">
+            <label for="visitorName">Your name</label>
+            <input id="visitorName" maxlength="50" required placeholder="Enter your name">
+            <label for="visitorComment">Your comment (maximum 200 characters)</label>
+            <textarea id="visitorComment" maxlength="200" required placeholder="Write your comment..."></textarea>
+            <div class="small"><span id="charCount">0</span>/200 characters</div>
+            <button class="submit" type="submit">Post Comment</button>
+            <div id="commentStatus" role="status"></div>
+            <p class="small">Please do not post private information. Your name and comment will be visible publicly. For visitor privacy, this public comment form does not collect email addresses. Visitors can contact you through your published email address instead.</p>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Community Messages</h3>
+          <div id="commentsList"><p class="small">Comments will appear here after the free Firebase setup is completed.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Muhammad Hamza Khan</strong><br>
+    Writer from Pakistan 🇵🇰 · Inspired by stories across cultures 🇰🇷<br>
+    <span class="small">© <span id="year"></span> Muhammad Hamza Khan. Personal portfolio.</span>
+  </footer>
+
+  <!-- Firebase setup: replace the placeholder values below with your Firebase web-app config. -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script>
+    // 1) Firebase Console mein project banayein, Web App add karein,
+    //    phir neeche apna config paste karein.
+    // 2) Firestore Database create karein aur neeche di hui security rules lagayein.
+    const firebaseConfig = {
+      apiKey: "PASTE_YOUR_API_KEY",
+      authDomain: "PASTE_YOUR_PROJECT.firebaseapp.com",
+      projectId: "PASTE_YOUR_PROJECT_ID",
+      storageBucket: "PASTE_YOUR_PROJECT.appspot.com",
+      messagingSenderId: "PASTE_YOUR_SENDER_ID",
+      appId: "PASTE_YOUR_APP_ID"
+    };
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const commentForm = document.getElementById("commentForm");
+    const commentInput = document.getElementById("visitorComment");
+    const charCount = document.getElementById("charCount");
+    const statusBox = document.getElementById("commentStatus");
+    const commentsList = document.getElementById("commentsList");
+
+    commentInput.addEventListener("input", () => {
+      charCount.textContent = commentInput.value.length;
+    });
+
+    // Replace this with your real TikTok profile URL.
+    const YOUR_TIKTOK_URL = "https://www.tiktok.com/@brute_wolf";
+    const tiktokLink = document.getElementById("tiktokLink");
+    if (!YOUR_TIKTOK_URL.includes("brute_wolf")) {
+      tiktokLink.href = YOUR_TIKTOK_URL;
+      tiktokLink.textContent = "Visit my TikTok profile";
+    }
+
+    let db = null;
+    const configReady = firebaseConfig.apiKey !== "PASTE_YOUR_API_KEY" &&
+                        firebaseConfig.projectId !== "PASTE_YOUR_PROJECT_ID";
+    if (configReady && window.firebase) {
+      try {
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+        loadComments();
+      } catch (error) {
+        statusBox.textContent = "Firebase setup error. Please check your configuration.";
+      }
+    } else {
+      commentsList.innerHTML = '<p class="small">Public comments are not active yet. Complete the free Firebase setup to let visitors post comments that everyone can see.</p>';
+    }
+
+    async function loadComments() {
+      try {
+        db.collection("publicComments").orderBy("createdAt", "desc").limit(50)
+          .onSnapshot(snapshot => {
+            if (snapshot.empty) {
+              commentsList.innerHTML = '<p class="small">No comments yet. Be the first to leave a message.</p>';
+              return;
+            }
+            commentsList.innerHTML = "";
+            snapshot.forEach(doc => {
+              const data = doc.data();
+              const item = document.createElement("div");
+              item.className = "comment";
+              const name = document.createElement("strong");
+              name.textContent = data.name || "Visitor";
+              const message = document.createElement("p");
+              message.textContent = data.comment || "";
+              const date = document.createElement("time");
+              date.textContent = data.createdAt && data.createdAt.toDate
+                ? data.createdAt.toDate().toLocaleString() : "";
+              item.append(name, date, message);
+              commentsList.appendChild(item);
+            });
+          });
+      } catch (error) {
+        commentsList.textContent = "Could not load comments. Check your Firestore rules and setup.";
+      }
+    }
+
+    commentForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!db) {
+        statusBox.textContent = "Comments are not active yet. First complete Firebase setup.";
+        return;
+      }
+      const name = document.getElementById("visitorName").value.trim();
+      const comment = commentInput.value.trim();
+      if (!name || !comment || comment.length > 200) {
+        statusBox.textContent = "Please complete all fields. Comment limit is 200 characters.";
+        return;
+      }
+      const button = commentForm.querySelector("button");
+      button.disabled = true;
+      button.textContent = "Posting...";
+      try {
+        // Only public-safe fields are stored. Do not collect visitor email addresses here.
+        await db.collection("publicComments").add({
+          name: name,
+          comment: comment,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        commentForm.reset();
+        charCount.textContent = "0";
+        statusBox.textContent = "Your comment has been posted publicly. Thank you!";
+      } catch (error) {
+        statusBox.textContent = "Comment could not be posted. Please try again later.";
+      } finally {
+        button.disabled = false;
+        button.textContent = "Post Comment";
+      }
+    });
+  </script>
+</body>
+        </html>
+          
